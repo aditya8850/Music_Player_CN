@@ -53,8 +53,8 @@ const songs = [
 let currentSongIndex = 0;
 const listOfSongs = document.querySelector('.list-inside');
 const playNextBtn = document.querySelector('.play-next');
-const playPrevBtn = document.querySelector('.play-prev');
-const genreSelect = document.querySelector('#genre-select')
+const playPrevBtn= document.querySelector('.play-prev');
+const genreSelect= document.querySelector('#genre-select')
 
 
 
@@ -62,7 +62,7 @@ const genreSelect = document.querySelector('#genre-select')
 function showSongsAll() {
     // Clear the list of songs before appending new ones
     listOfSongs.innerHTML = '';
-
+    
     songs.forEach((song) => {
         const pInLists = document.createElement('p');
         pInLists.classList.add('cursor-pointer');
@@ -74,7 +74,7 @@ function showSongsAll() {
             playSong(currentSongIndex);
         });
     });
-
+    
 }
 
 // Function to play the current song
@@ -104,13 +104,13 @@ function toggleSwitch() {
 
 //func:
 function showSongsByGenre(genre) {
-
+    
     listOfSongs.innerHTML = '';
 
-
+   
     const filteredSongs = songs.filter(song => song.genre === genre);
 
-
+    
     filteredSongs.forEach((song) => {
         const pInLists = document.createElement('p');
         pInLists.classList.add('cursor-pointer');
@@ -127,30 +127,30 @@ function showSongsByGenre(genre) {
 
 // Event listener for genre selection change
 genreSelect.addEventListener('change', function () {
-    const selectedGenre = genreSelect.value; e
+    const selectedGenre = genreSelect.value; // Get the selected genre
     if (selectedGenre === 'Allsongs') {
-        showSongsAll();
+        showSongsAll(); 
     } else {
-        showSongsByGenre(selectedGenre);
+        showSongsByGenre(selectedGenre); 
     }
 });
 
 // Event listener for the play next button
 playNextBtn.addEventListener('click', function () {
-    currentSongIndex++;
-    if (currentSongIndex >= songs.length) {
-        currentSongIndex = 0;
+    currentSongIndex++; 
+    if(currentSongIndex>= songs.length){
+        currentSongIndex= 0;
     }
     playSong(currentSongIndex);
 });
 //event listener for the prev button:
-playPrevBtn.addEventListener('click', function () {
+playPrevBtn.addEventListener('click',function(){
     currentSongIndex--;
-    if (currentSongIndex < 0) {
-        currentSongIndex = songs.length - 1;
+    if(currentSongIndex<0){
+        currentSongIndex=songs.length-1;
     }
     playSong(currentSongIndex)
-
+    
 })
 
 
