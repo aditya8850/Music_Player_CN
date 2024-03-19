@@ -14,7 +14,7 @@ const songs = [
         artist: "eminem",
         img: "thumbnails/Eminem-Heaven.webp",
         genre: "hiphop",
-        source: "audioSRC/eminem- heaven.mp3",
+        source: "audioSRC/eminem-heaven.mp3",
     }
     ,
     {id:3,
@@ -22,7 +22,7 @@ const songs = [
     artist:"polyphia",
     img:"thumbnails/polyphia-pg",
     genre:"metal",
-    source:"audioSRC/polyphia -neurotica.mp3",}
+    source:"audioSRC/polyphia-neurotica.mp3",}
     ,
     // {id:4,
     // name:,
