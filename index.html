@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-700 font-sans flex items-center justify-evenly min-h-screen">
+    
+    <div class="max-w-screen-lg flex justify-between">
+        <!-- All songs Section -->
+        
+        <section class="w-3/12 bg-slate-200 mx-2 my-4 border border-black rounded-md shadow-lg">
+            <div class="my-4 mx-2">
+                <p>Select genre</p>
+                <select name="genre" id="" class="bg-slate-700 text-white">
+                    <option value="Allsongs">All Songs</option>
+                    <option value="HipHop">HipHop</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="Metal">Metal</option>
+                </select>
+            </div>
+            <h2 class="my-2 mx-3 font-semibold ">All Songs</h2>
+            <div class="list-inside mx-2 my-2">
+                <!-- <p>Song1</p>
+                <p>Song2</p>
+                <p>Song3</p> -->
+            </div>
+        </section>
+
+        <!-- Middle Section (Song Card) -->
+        <section class="w-5/12 bg-slate-200 mx-2 my-4 border border-black rounded-md shadow-lg">
+            
+            <div class="mx-2 my-2 thumbnail-container">
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocKCnbozitu_ubC9EIZyqQ_xKifE3ryAY3nor7r6_SQ5Ipk=s288-c-no" alt="Song Image" class="w-auto rounded shadow-md thumbnail-song">
+                <p id="current-song" class="font-semibold my-1 ">Current Song Name</p>
+                <audio controls class="w-full current-song-audio">
+                    <!-- You can add the source of the audio file here -->
+                    <!-- Example: <source src="song.mp3" type="audio/mpeg"> -->
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="flex justify-center my-2">
+                    <!-- Previous button with placeholder icon -->
+                    <button onclick="playPrevious()" class="bg-gray-500 text-white px-4 py-2 rounded-full mr-4">
+                        <span>&#9665;</span>
+                    </button>
+                    <!-- Next button with placeholder icon -->
+                    <button onclick="playNext()" class="bg-gray-500 text-white px-4 py-2 rounded-full mr-4">
+                        <span>&#9655;</span>
+                    </button>
+                    <!-- Generic button -->
+                    <button onclick="customAction()" class="bg-blue-500 text-white px-4 py-2 rounded-full">
+                        Add to Playlist
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Last Section (Empty) -->
+        <section class="w-3/12 bg-slate-200 mx-2 my-4 border border-black rounded-md shadow-lg">
+            <div class="font-semibold list-inside">
+                <h3 class="mx-1 my-4">Current Playlist</h3>
+                <h3 class="mx-1 my-4">All Playlists</h3>
+            </div>
+            <!-- You can add content here as needed -->
+        </section>
+          <!-- toggle theme -->
+        <div ><button id="toggle-switch-button">Switch</button ></div>
+        
+    </div>
+    
+    
+</body>
+
+<script src="js.js"></script>
+</html>
