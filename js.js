@@ -60,8 +60,8 @@ function toggleSwitch() {
 
 //function for showing songs
 
-showSongs()
-function showSongs() {
+showSongs(songs)
+function showSongs(songs) {
     //showing list of songs on the first card
     const listOfSongs = document.querySelector('.list-inside');
     listOfSongs.classList.add('cursor-pointer')
