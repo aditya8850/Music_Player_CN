@@ -17,28 +17,34 @@ const songs = [
         source: "audioSRC/eminem-heaven.mp3",
     }
     ,
-    {id:3,
-    name:"neurotica",
-    artist:"polyphia",
-    img:"thumbnails/polyphia-pg",
-    genre:"metal",
-    source:"audioSRC/polyphia-neurotica.mp3",}
+    {
+        id: 3,
+        name: "neurotica",
+        artist: "polyphia",
+        img: "thumbnails/polyphia-pg",
+        genre: "metal",
+        source: "audioSRC/polyphia-neurotica.mp3",
+    }
     ,
-    {id:4,
-    name:"without me",
-    artist:"halsey ft Juice Wrld",
-    img:"thumbnails/Without-Me.png",
-    genre:"pop",
-    source:"audioSRC/without-me.mp3",}
+    {
+        id: 4,
+        name: "without me",
+        artist: "halsey ft Juice Wrld",
+        img: "thumbnails/Without-Me.png",
+        genre: "pop",
+        source: "audioSRC/without-me.mp3",
+    }
     ,
-    {id:5,
-    name:"all time low",
-    artist:"jon bellion",
-    img:"thumbnails/All-Time-Low.png",
-    genre:"pop",
-    source:"audioSRC/all-time-low.mp3",}
+    {
+        id: 5,
+        name: "all time low",
+        artist: "jon bellion",
+        img: "thumbnails/All-Time-Low.png",
+        genre: "pop",
+        source: "audioSRC/all-time-low.mp3",
+    }
     ,
-    
+
 
 ]
 
@@ -52,6 +58,9 @@ function toggleSwitch() {
         body.classList.toggle('white-background');
     });
 }
+//function for sorting the songs via drop-down.
+
+
 
 //function for showing songs
 
