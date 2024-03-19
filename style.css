@@ -825,4 +825,7 @@ div #toggle-switch-button{
   background: rgba(0, 38, 255, 0.517);
   margin-bottom: 1rem;
   padding: 1rem;
+  height: 4rem;
+  overflow: none;
+  padding-left: 0.5em;
 }
