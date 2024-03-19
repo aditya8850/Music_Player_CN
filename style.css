@@ -804,15 +804,18 @@ div #toggle-switch-button{
 #toggle-switch-button{
     color: white;
     
-    background: lightblue;
+    background: rgb(1, 144, 191);
 }
 .white-background {
-    background-color: white;
+    background-color: rgb(230, 223, 223);
   }
 .cursor-pointer{
   cursor: pointer;
 }
+
+
 .thumbnail-song {
   width: 50vw;
   height: 50vh;
 }
+ 

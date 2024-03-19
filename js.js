@@ -24,26 +24,21 @@ const songs = [
     genre:"metal",
     source:"audioSRC/polyphia-neurotica.mp3",}
     ,
-    // {id:4,
-    // name:,
-    // artist:,
-    // img:,
-    // genre:,
-    // source:,}
-    // ,
-    // {id:5,
-    // name:,
-    // artist:,
-    // img:,
-    // genre:,
-    // source:,}
-    // ,
-    // {id:6,
-    // name:,
-    // artist:,
-    // img:,
-    // genre:,
-    // source:,}
+    {id:4,
+    name:"without me",
+    artist:"halsey ft Juice Wrld",
+    img:"thumbnails/Without-Me.png",
+    genre:"pop",
+    source:"audioSRC/without-me.mp3",}
+    ,
+    {id:5,
+    name:"all time low",
+    artist:"jon bellion",
+    img:"thumbnails/All-Time-Low.png",
+    genre:"pop",
+    source:"audioSRC/all-time-low.mp3",}
+    ,
+    
 
 ]
 
