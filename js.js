@@ -4,7 +4,7 @@ const songs = [
         name: "Time",
         artist: "Nf",
         img: "thumbnails/NF-Time.webp",
-        genre: "hiphop",
+        genre: "HipHop",
         source: "audioSRC/nf-time.mp3",
     }
     ,
@@ -13,7 +13,7 @@ const songs = [
         name: "Heaven",
         artist: "Eminem",
         img: "thumbnails/Eminem-Heaven.webp",
-        genre: "hiphop",
+        genre: "HipHop",
         source: "audioSRC/eminem-heaven.mp3",
     }
     ,
@@ -53,9 +53,10 @@ const songs = [
 let currentSongIndex = 0;
 const listOfSongs = document.querySelector('.list-inside');
 const playNextBtn = document.querySelector('.play-next');
-const playPrevBtn= document.querySelector('.play-prev');
+const playPrevBtn = document.querySelector('.play-prev');
+const genreSelect = document.querySelector('#genre-select')
 
-showSongsAll();
+
 
 // Function to show songs
 function showSongsAll() {
@@ -73,7 +74,7 @@ function showSongsAll() {
             playSong(currentSongIndex);
         });
     });
-    playSong(0)
+
 }
 
 // Function to play the current song
@@ -91,26 +92,7 @@ function playSong(index) {
     audio.muted = false;
 }
 
-// Event listener for the play next button
-playNextBtn.addEventListener('click', function () {
-    currentSongIndex++; 
-    if(currentSongIndex>= songs.length){
-        currentSongIndex= 0;
-    }
-    playSong(currentSongIndex);
-});
-//event listener for the prev button:
-playPrevBtn.addEventListener('click',function(){
-    currentSongIndex--;
-    if(currentSongIndex<0){
-        currentSongIndex=songs.length-1;
-    }
-    playSong(currentSongIndex)
-    
-})
-
 // Toggle switch function
-toggleSwitch();
 function toggleSwitch() {
     const toggleSwitch = document.getElementById('toggle-switch-button');
     const body = document.querySelector('body');
@@ -119,3 +101,61 @@ function toggleSwitch() {
         body.classList.toggle('white-background');
     });
 }
+
+//func:
+function showSongsByGenre(genre) {
+
+    listOfSongs.innerHTML = '';
+
+
+    const filteredSongs = songs.filter(song => song.genre === genre);
+
+
+    filteredSongs.forEach((song) => {
+        const pInLists = document.createElement('p');
+        pInLists.classList.add('cursor-pointer');
+        pInLists.innerHTML = `${song.artist}: ${song.name}`;
+        listOfSongs.appendChild(pInLists);
+
+        pInLists.addEventListener('click', function (e) {
+            currentSongIndex = songs.indexOf(song); // Update the current song index
+            playSong(currentSongIndex);
+        });
+    });
+}
+
+
+// Event listener for genre selection change
+genreSelect.addEventListener('change', function () {
+    const selectedGenre = genreSelect.value; e
+    if (selectedGenre === 'Allsongs') {
+        showSongsAll();
+    } else {
+        showSongsByGenre(selectedGenre);
+    }
+});
+
+// Event listener for the play next button
+playNextBtn.addEventListener('click', function () {
+    currentSongIndex++;
+    if (currentSongIndex >= songs.length) {
+        currentSongIndex = 0;
+    }
+    playSong(currentSongIndex);
+});
+//event listener for the prev button:
+playPrevBtn.addEventListener('click', function () {
+    currentSongIndex--;
+    if (currentSongIndex < 0) {
+        currentSongIndex = songs.length - 1;
+    }
+    playSong(currentSongIndex)
+
+})
+
+
+
+showSongsAll();
+toggleSwitch();
+
+console.log(document);
