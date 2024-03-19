@@ -3,26 +3,26 @@ const songs = [
         id: 1,
         name: "Time",
         artist: "Nf",
-        img: "/thumbnails/NF-Time.webp",
+        img: "thumbnails/NF-Time.webp",
         genre: "hiphop",
-        source: "/audioSRC/nf-time.mp3",
+        source: "audioSRC/nf-time.mp3",
     }
     ,
     {
         id: 2,
         name: "heaven",
         artist: "eminem",
-        img: "/thumbnails/Eminem-Heaven.webp",
+        img: "thumbnails/Eminem-Heaven.webp",
         genre: "hiphop",
-        source: "/audioSRC/eminem- heaven.mp3",
+        source: "audioSRC/eminem- heaven.mp3",
     }
     ,
     {id:3,
     name:"neurotica",
     artist:"polyphia",
-    img:"/thumbnails/polyphia-pg",
+    img:"thumbnails/polyphia-pg",
     genre:"metal",
-    source:"/audioSRC/polyphia -neurotica.mp3",}
+    source:"audioSRC/polyphia -neurotica.mp3",}
     ,
     // {id:4,
     // name:,
