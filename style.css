@@ -809,4 +809,10 @@ div #toggle-switch-button{
 .white-background {
     background-color: white;
   }
-  
+.cursor-pointer{
+  cursor: pointer;
+}
+.thumbnail-song {
+  width: 50vw;
+  height: 50vh;
+}

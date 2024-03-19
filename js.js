@@ -6,13 +6,13 @@ const songs= [
     genre:"HipHop",
     source:"/audioSRC/nf-time.mp3",}
     ,
-    // {id:2,
-    // name:,
-    // artist:,
-    // img:,
-    // genre:,
-    // source:,}
-    // ,
+    {id:2,
+    name:"heaven",
+    artist:"eminem",
+    img:"/thumbnails/Eminem-Heaven.webp",
+    genre:"HipHop",
+    source:"/audioSRC/eminem- heaven.mp3",}
+    ,
     // {id:3,
     // name:,
     // artist:,
@@ -53,34 +53,41 @@ toggleSwitch.addEventListener('click', () => {
 });}
 
 //function for showing songs
+
 showSongs()
 function showSongs(){
     //showing list of songs on the first card
 const listOfSongs= document.querySelector('.list-inside');
+listOfSongs.classList.add('cursor-pointer')
+songs.forEach((song)=>{
+    const pInLists= document.createElement('p');
+    pInLists.innerHTML=song.name
+    // console.log(listOfSongs)
+    pInLists.innerHTML= `${song.artist}: ${song.name}`
+    listOfSongs.appendChild(pInLists);
+    
+    pInLists.addEventListener('click',function(e){
+        const thumbnail= document.querySelector(".thumbnail-song");
+       (thumbnail.src)= song.img;
+       
+       const name= document.querySelector('#current-song');
+       name.innerHTML= song.name;
+    
+       const audio= document.querySelector('.current-song-audio');
+       audio.src= song.source;
+       audio.autoplay=true;
+       
+    
+       });
+})
 
-const pInLists= document.createElement('p');
-pInLists.innerHTML= `${songs[0].artist}: ${songs[0].name}`
 
-listOfSongs.appendChild(pInLists)
+
 //adding e-listener to update thumbnail ,name and audio src.
-pInLists.addEventListener('click',function(e){
-    const thumbnail= document.querySelector(".thumbnail-song");
-   (thumbnail.src)= songs[0].img;
-   
-   const name= document.querySelector('#current-song');
-   name.innerHTML= songs[0].name;
 
-   const audio= document.querySelector('.current-song-audio');
-   audio.src= songs[0].source;
-   audio.autoplay=true;
-   
-
-   });
 
 }
 
-console.log("hey");
-console.log("hey");
-console.log("hey");
+
 
 
