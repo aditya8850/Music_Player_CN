@@ -48,8 +48,55 @@ const songs = [
 
 ]
 
-//function for toggle-switch
-toggleSwitch()
+
+
+let currentSongIndex = 0;
+const listOfSongs = document.querySelector('.list-inside');
+const playNextBtn = document.querySelector('.play-next');
+
+showSongsAll();
+
+// Function to show songs
+function showSongsAll() {
+    // Clear the list of songs before appending new ones
+    listOfSongs.innerHTML = '';
+
+    songs.forEach((song) => {
+        const pInLists = document.createElement('p');
+        pInLists.classList.add('cursor-pointer');
+        pInLists.innerHTML = `${song.artist}: ${song.name}`;
+        listOfSongs.appendChild(pInLists);
+
+        pInLists.addEventListener('click', function (e) {
+            currentSongIndex = songs.indexOf(song); // Update the current song index
+            playSong(currentSongIndex);
+        });
+    });
+}
+
+// Function to play the current song
+function playSong(index) {
+    const song = songs[index];
+    const thumbnail = document.querySelector(".thumbnail-song");
+    thumbnail.src = song.img;
+
+    const name = document.querySelector('#current-song');
+    name.innerHTML = song.name;
+
+    const audio = document.querySelector('.current-song-audio');
+    audio.src = song.source;
+    audio.autoplay = true;
+    audio.muted = false;
+}
+
+// Event listener for the play next button
+playNextBtn.addEventListener('click', function () {
+    currentSongIndex = (currentSongIndex + 1) % songs.length; // Move to the next song index
+    playSong(currentSongIndex);
+});
+
+// Toggle switch function
+toggleSwitch();
 function toggleSwitch() {
     const toggleSwitch = document.getElementById('toggle-switch-button');
     const body = document.querySelector('body');
@@ -58,47 +105,3 @@ function toggleSwitch() {
         body.classList.toggle('white-background');
     });
 }
-//function for sorting the songs via drop-down.
-
-
-
-//function for showing songs
-
-showSongs(songs)
-function showSongs(songs) {
-    //showing list of songs on the first card
-    const listOfSongs = document.querySelector('.list-inside');
-    
-    songs.forEach((song) => {
-        const pInLists = document.createElement('p');
-        pInLists.classList.add('cursor-pointer')
-        pInLists.innerHTML = song.name
-        // console.log(listOfSongs)
-        pInLists.innerHTML = `${song.artist}: ${song.name}`
-        listOfSongs.appendChild(pInLists);
-
-        pInLists.addEventListener('click', function (e) {
-            const thumbnail = document.querySelector(".thumbnail-song");
-            (thumbnail.src) = song.img;
-
-            const name = document.querySelector('#current-song');
-            name.innerHTML = song.name;
-
-            const audio = document.querySelector('.current-song-audio');
-            audio.src = song.source;
-            audio.autoplay = true;
-
-
-        });
-    })
-
-
-
-    //adding e-listener to update thumbnail ,name and audio src.
-
-
-}
-
-
-
-
