@@ -53,6 +53,7 @@ const songs = [
 let currentSongIndex = 0;
 const listOfSongs = document.querySelector('.list-inside');
 const playNextBtn = document.querySelector('.play-next');
+const playPrevBtn= document.querySelector('.play-prev');
 
 showSongsAll();
 
@@ -72,6 +73,7 @@ function showSongsAll() {
             playSong(currentSongIndex);
         });
     });
+    playSong(0)
 }
 
 // Function to play the current song
@@ -91,9 +93,21 @@ function playSong(index) {
 
 // Event listener for the play next button
 playNextBtn.addEventListener('click', function () {
-    currentSongIndex = (currentSongIndex + 1) % songs.length; // Move to the next song index
+    currentSongIndex++; 
+    if(currentSongIndex>= songs.length){
+        currentSongIndex= 0;
+    }
     playSong(currentSongIndex);
 });
+//event listener for the prev button:
+playPrevBtn.addEventListener('click',function(){
+    currentSongIndex--;
+    if(currentSongIndex<0){
+        currentSongIndex=songs.length-1;
+    }
+    playSong(currentSongIndex)
+    
+})
 
 // Toggle switch function
 toggleSwitch();
