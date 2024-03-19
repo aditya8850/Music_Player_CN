@@ -797,6 +797,54 @@ video {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+/* For smaller devices, adjust sizes and layout */
+
+@media (max-width: 768px) {
+  .max-w-screen-lg {
+    max-width: 100%;
+  }
+  .w-3\/12,
+  .w-5\/12 {
+    width: 100%;
+  }
+  .mx-2,
+  .mx-3,
+  .my-2,
+  .my-4,
+  .mx-8,
+  .my-8,
+  .mx-auto,
+  .my-auto,
+  .my-1,
+  .mx-1,
+  .mb-4,
+  .mr-4,
+  .mb-1 {
+    margin: 0.5rem;
+  }
+  .px-4,
+  .py-4,
+  .py-2,
+  .px-2,
+  .py-1 {
+    padding: 0.5rem;
+  }
+  .font-sans {
+    font-size: 16px;
+  }
+  .thumbnail-song {
+    width: 100%;
+    height: auto;
+  }
+  .list-inside p {
+    height: auto;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+}
+
+
 div #toggle-switch-button{
     position: absolute;
     top: 5px;
