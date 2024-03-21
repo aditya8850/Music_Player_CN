@@ -849,9 +849,14 @@ div #toggle-switch-button{
     position: absolute;
     top: 5px;
 }
+.flex{
+  display:flex;
+  justify-content: center;
+}
 #toggle-switch-button{
     color: white;
-    
+    position: relative;
+    right: 0;
     background: rgb(1, 144, 191);
 }
 .white-background {
@@ -876,4 +881,16 @@ div #toggle-switch-button{
   height: 4rem;
   overflow: none;
   padding-left: 0.5em;
+}
+h3{
+  background: rgba(128, 128, 128, 0.345);
+}
+button{ 
+  margin: 0.19rem;
+  
+}
+p.playlist-style{
+  background-color: rgba(2, 2, 215, 0.765);
+  color: white;
+  
 }

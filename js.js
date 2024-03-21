@@ -55,7 +55,14 @@ const listOfSongs = document.querySelector('.list-inside');
 const playNextBtn = document.querySelector('.play-next');
 const playPrevBtn= document.querySelector('.play-prev');
 const genreSelect= document.querySelector('#genre-select')
+const currentPlayList= document.querySelector('.playlist-div');
 
+
+//function to add a playlist
+
+function createPlaylist(){
+
+}
 
 
 // Function to show songs
@@ -71,6 +78,7 @@ function showSongsAll() {
 
         pInLists.addEventListener('click', function (e) {
             currentSongIndex = songs.indexOf(song); // Update the current song index
+           
             playSong(currentSongIndex);
         });
     });
@@ -152,6 +160,89 @@ playPrevBtn.addEventListener('click',function(){
     playSong(currentSongIndex)
     
 })
+
+createPlaylist()
+// Function to add a new playlist
+function createPlaylist() {
+    const addPlayListDiv = document.querySelector('.playlist-child-1');
+    const allPlayListDiv = document.querySelector('.playlist-child-2');
+    const inputPlaylist = document.createElement('input');
+    const submitPlaylist = document.createElement('button');
+    
+    
+    // Set attributes and text for submit button
+    submitPlaylist.setAttribute('type', 'submit');
+    submitPlaylist.innerHTML = "Submit";
+    submitPlaylist.classList.add('button');
+   
+    // Append input and submit button to the playlist creation section
+    addPlayListDiv.appendChild(inputPlaylist);
+    addPlayListDiv.appendChild(submitPlaylist);
+    
+    // Event listener for submitting playlist name
+    submitPlaylist.addEventListener('click', function() {
+        const playlistName = inputPlaylist.value.trim();
+        if (playlistName !== '') {
+            // Check if the playlist name is unique
+            const existingPlaylists = document.querySelectorAll('.playlist-section h3');
+            for (const existingPlaylist of existingPlaylists) {
+                if (existingPlaylist.textContent === playlistName) {
+                    alert('Playlist name must be unique.');
+                    return;
+                }
+            }
+            
+            // Create a new playlist section
+            const playlistSection = document.createElement('div');
+            playlistSection.classList.add('playlist-section');
+
+            // Create a heading for the playlist name
+            const playlistNameHeading = document.createElement('h3');
+            playlistNameHeading.textContent = playlistName;
+           
+             const addButton= document.querySelector('.addToPlaylist')
+            // Append playlist name to the playlist section
+            playlistSection.appendChild(playlistNameHeading);
+
+            // Append playlist section to the list of playlists
+            allPlayListDiv.appendChild(playlistSection);
+            console.log(allPlayListDiv);
+            // Clear input field after submitting
+            inputPlaylist.value = '';
+
+            // Event listener for selecting the playlist
+            addButton.addEventListener('click', function() {
+                addToPlaylist(playlistNameHeading.textContent);
+                console.log(playlistNameHeading.textContent);
+            });
+        } else {
+            alert('Please enter a playlist name.');
+        }
+    });
+}
+
+// Function to add the current song to the selected playlist
+// Function to add the current song to the selected playlist
+function addToPlaylist(playlistName) {
+   
+    const currentSong = songs[currentSongIndex];
+    const playlistSections = document.querySelectorAll('.playlist-section');
+    
+    // Find the selected playlist section
+    for (const section of playlistSections) {
+        const heading = section.querySelector('h3');
+        if (heading.textContent === playlistName) {
+            const playListItem = document.createElement('p');
+            playListItem.textContent = `${currentSong.artist}: ${currentSong.name}`;
+            section.appendChild(playListItem);
+            console.log(playListItem);
+            // Add the song to the selected playlist in your data structure or storage here
+            // For example, you can store the playlist name and song information in an array or object
+            break;
+        }
+    }
+}
+
 
 
 
