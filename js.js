@@ -221,14 +221,14 @@ function createPlaylist() {
     });
 }
 
-// Function to add the current song to the selected playlist
+
 // Function to add the current song to the selected playlist
 function addToPlaylist(playlistName) {
    
     const currentSong = songs[currentSongIndex];
     const playlistSections = document.querySelectorAll('.playlist-section');
     
-    // Find the selected playlist section
+    
     for (const section of playlistSections) {
         const heading = section.querySelector('h3');
         if (heading.textContent === playlistName) {
@@ -236,8 +236,8 @@ function addToPlaylist(playlistName) {
             playListItem.textContent = `${currentSong.artist}: ${currentSong.name}`;
             section.appendChild(playListItem);
             console.log(playListItem);
-            // Add the song to the selected playlist in your data structure or storage here
-            // For example, you can store the playlist name and song information in an array or object
+            // Add the song to the selected playlist 
+
             break;
         }
     }
